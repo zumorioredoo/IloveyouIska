@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    padding: 24px;
+    color: #54263c;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, #fff8fb 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 75%, #fff8fb 0 2px, transparent 3px),
+        linear-gradient(135deg, #ffdce8, #f9b6ce 55%, #f7d4df);
+    background-size: 42px 42px, 58px 58px, auto;
+}
+
+.proposal-card {
+    width: min(100%, 560px);
+    padding: 48px 32px 36px;
+    border: 1px solid rgb(255 255 255 / 75%);
+    border-radius: 30px;
+    background: rgb(255 255 255 / 88%);
+    box-shadow: 0 24px 70px rgb(137 49 87 / 20%);
+    text-align: center;
+    backdrop-filter: blur(12px);
+}
+
+.heart {
+    margin-bottom: 12px;
+    font-size: 54px;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    color: #c04d7c;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    color: #7d3154;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 7vw, 3.25rem);
+    line-height: 1.15;
+}
+
+.subtitle {
+    margin: 18px 0 30px;
+    color: #895e72;
+    font-size: 1rem;
+}
+
+.button-area {
+    position: relative;
+    display: flex;
+    min-height: 112px;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+button {
+    min-width: 112px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+button:focus-visible {
+    outline: 3px solid #7d3154;
+    outline-offset: 4px;
+}
+
+.yes-button {
+    color: white;
+    background: linear-gradient(135deg, #ec5f91, #d83e78);
+    box-shadow: 0 8px 18px rgb(216 62 120 / 28%);
+}
+
+.yes-button:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 12px 22px rgb(216 62 120 / 35%);
+}
+
+.no-button {
+    color: #80566a;
+    background: #f7e9ef;
+}
+
+.hint {
+    min-height: 1.2em;
+    margin: 20px 0 0;
+    color: #ad7890;
+    font-size: 0.9rem;
+}
+
+.message-dialog {
+    position: fixed;
+    width: min(90vw, 440px);
+    padding: 38px 30px 30px;
+    border: 1px solid #f5d9e4;
+    border-radius: 26px;
+    color: #54263c;
+    background: #fffafd;
+    box-shadow: 0 24px 80px rgb(76 30 52 / 25%);
+    text-align: center;
+}
+
+.message-dialog::backdrop {
+    background: rgb(73 31 51 / 42%);
+    backdrop-filter: blur(5px);
+}
+
+.message-dialog h2 {
+    margin: 0;
+    color: #7d3154;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.dialog-copy {
+    margin: 10px 0 20px;
+    color: #895e72;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    min-width: 36px;
+    min-height: 36px;
+    padding: 0;
+    color: #895e72;
+    background: transparent;
+    font-size: 1.8rem;
+}
+
+.love-note {
+    margin: 22px 0 0;
+    color: #7d3154;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+}
+
+@media (max-width: 480px) {
+    .proposal-card {
+        padding: 38px 20px 30px;
+    }
+
+    .button-area {
+        gap: 10px;
+    }
+
+    button {
+        min-width: 100px;
+        padding-inline: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
